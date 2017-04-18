@@ -7,6 +7,9 @@ var config = {
   entry: {
     app: './entry.js'
   },
+  devServer: {
+    historyApiFallback: true
+  },
 
   output: {
     path: __dirname + '/dist',

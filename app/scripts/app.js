@@ -4,20 +4,22 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import AppRoot from './components/app_root.js'
-import About from './components/about.js'
-import Contact from './components/contact.js'
+import Welcome from './components/welcome.js'
+import Question from './components/question.js'
+import QuestionList from './components/question_list.js'
+import Results from './components/results.js'
 
-const FooBar = () => (<div>Hi</div>)
 
 export default function app() {
   render(
     <Provider store={store}>
       <Router>
         <div>
-          <Route path="/"      component={AppRoot}/>
-          <Route path="/foobar"  component={FooBar} />
-          <Route exact path="/about" component={About} />
-          <Route path="/contact-us" component={Contact} />
+          <Route exact path="/" component={AppRoot}/>
+          <Route path="/welcome" component={Welcome} />
+          <Route path="/results" component={Results} />
+          <Route path="/question-list" component={QuestionList} />
+          <Route path="/question/:id" component={Question} />
         </div>
       </Router>
     </Provider>,
